@@ -10,6 +10,12 @@ app.use(bodyParser.json())
 let routes = require('./api/routes')
 routes(app)
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+var indexRouter = require('./routes/index.route');
+app.use('/', indexRouter);
+
 app.use(function(req, res){
     res.status(404).send({url: req.originalUrl + 'not found!'})
 })
