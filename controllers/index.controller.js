@@ -1,4 +1,4 @@
-const db = require('../api/firebase');
+const db = require('../firebase');
 
 module.exports = {
     index: async (req, res)=>{
@@ -10,5 +10,6 @@ module.exports = {
             return data;
         });
         res.render('index', {people: people});
-    }
+    },
+    
 }
