@@ -16,7 +16,7 @@ module.exports = {
     store: async (req, res) => {
         let data = req.body;
         let result = await db.collection('people').add({
-            image: data['name'],
+            name: data['name'],
             status: data['status'],
             date: data['date'],
         });
