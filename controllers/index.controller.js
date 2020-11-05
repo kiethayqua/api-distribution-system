@@ -11,5 +11,4 @@ module.exports = {
         });
         res.render('index', {people: people});
     },
-    
 }
