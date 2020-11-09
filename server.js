@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser('12345'));
-app.use('/api', authAPIMiddleware, apiRouter);
+app.use('/api', authAPIMiddleware.checkAuthHeader, apiRouter);
 app.use('/index', authMiddleware.checkLogin, indexRouter);
 app.use('/auth', authRouter);
 app.use('/logout', logoutRouter);
