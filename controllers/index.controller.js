@@ -1,4 +1,5 @@
 const db = require('../firebase');
+const _ = require('lodash');
 
 module.exports = {
     index: async (req, res)=>{
@@ -9,6 +10,7 @@ module.exports = {
             });
             return data;
         });
+        people = _.sortBy(people, ['date']);
         res.render('index', {people: people});
     },
 }
