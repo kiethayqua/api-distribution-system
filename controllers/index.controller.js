@@ -10,7 +10,9 @@ module.exports = {
             });
             return data;
         });
-        people = _.sortBy(people, ['date']);
+
+        // sắp xếp thời gian mới nhất
+        people = _.sortBy(people, ['date']).reverse();
         res.render('index', {people: people});
     },
 }
